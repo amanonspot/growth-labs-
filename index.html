@@ -74,7 +74,6 @@ nav.scrolled{background:rgba(10,15,10,0.9);backdrop-filter:blur(24px);border-bot
   max-width:1100px;width:100%;
   display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;
 }
-.hero-left{}
 .hero-pill{
   display:inline-flex;align-items:center;gap:0.5rem;
   background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);
@@ -171,7 +170,6 @@ nav.scrolled{background:rgba(10,15,10,0.9);backdrop-filter:blur(24px);border-bot
 .wa-notif-meta{font-size:0.7rem;color:rgba(255,255,255,0.4);flex:1;}
 .wa-notif-time{font-size:0.65rem;color:rgba(255,255,255,0.25);}
 .wa-notif-body{font-size:0.82rem;font-weight:600;color:var(--lime);}
-.wa-notif2{opacity:0.6;transform:scale(0.95);bottom:-60px;left:15px;}
 
 .roi-float{
   width:180px;top:50%;right:-10px;transform:translateY(-50%);
@@ -200,7 +198,7 @@ nav.scrolled{background:rgba(10,15,10,0.9);backdrop-filter:blur(24px);border-bot
 .logos-track .brand{font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:-0.02em;white-space:nowrap;}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── BENTO FEATURES ── */
+/* ── FEATURES ── */
 .features{
   padding:7rem 4rem;
   background:var(--cream);
@@ -226,54 +224,61 @@ nav.scrolled{background:rgba(10,15,10,0.9);backdrop-filter:blur(24px);border-bot
 }
 .features-header-right .btn-light:hover{border-color:var(--ink);background:rgba(10,15,10,0.05);}
 
-.bento{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1.2rem;}
-.bento-card{
-  background:var(--fog);border:1px solid rgba(10,15,10,0.08);
-  border-radius:20px;padding:1.8rem;overflow:hidden;position:relative;
-  transition:transform 0.3s,box-shadow 0.3s;
+/* ── SERVICE GRID ── */
+.svc-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(10,15,10,0.12);
+  border:1.5px solid rgba(10,15,10,0.12);
+  border-radius:20px;overflow:hidden;
 }
-.bento-card:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(10,15,10,0.1);}
-.bento-card.tall{grid-row:span 2;}
-.bento-card.wide{grid-column:span 2;}
-.bento-card.dark{background:var(--leaf);color:var(--white);}
-.bento-card.green-bg{background:var(--lime);color:var(--ink);}
-.bento-tag{
-  display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
-  padding:0.25rem 0.7rem;border-radius:6px;margin-bottom:0.8rem;
-  background:rgba(10,15,10,0.07);color:var(--muted);
+.svc-card{
+  background:var(--fog);
+  padding:2.2rem 2rem;
+  display:flex;flex-direction:column;
+  transition:background 0.25s;
+  position:relative;
 }
-.bento-card.dark .bento-tag{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);}
-.bento-card.green-bg .bento-tag{background:rgba(10,15,10,0.1);color:var(--dark-muted);}
-.bento-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem;line-height:1.2;letter-spacing:-0.02em;margin-bottom:0.6rem;color:var(--ink);}
-.bento-card.dark .bento-title{color:var(--white);}
-.bento-card.green-bg .bento-title{color:var(--ink);}
-.bento-desc{font-size:0.875rem;color:var(--muted);line-height:1.6;}
-.bento-card.dark .bento-desc{color:rgba(255,255,255,0.55);}
-.bento-card.green-bg .bento-desc{color:var(--dark-muted);}
-/* mini chart inside bento */
-.mini-chart{display:flex;align-items:flex-end;gap:3px;height:48px;margin-top:1.2rem;}
-.mini-bar{flex:1;background:rgba(10,15,10,0.1);border-radius:3px 3px 0 0;}
-.mini-bar.hi{background:var(--moss);}
-.bento-card.dark .mini-bar{background:rgba(255,255,255,0.1);}
-.bento-card.dark .mini-bar.hi{background:var(--lime);}
-/* platform icons row */
-.platform-row{display:flex;gap:0.6rem;margin-top:1.2rem;flex-wrap:wrap;}
-.platform-pill{
-  display:flex;align-items:center;gap:0.4rem;
-  background:rgba(10,15,10,0.07);border:1px solid rgba(10,15,10,0.1);
-  padding:0.35rem 0.7rem;border-radius:8px;font-size:0.75rem;font-weight:600;color:var(--ink);
+.svc-card:hover{background:var(--white);}
+.svc-icon-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.4rem;
 }
-.bento-accuracy{
-  display:inline-flex;align-items:center;gap:0.4rem;
-  background:var(--lime);color:var(--ink);
-  font-size:0.72rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;
-  margin-top:1rem;
+.svc-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:rgba(10,15,10,0.07);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
 }
-/* forecast line */
-.forecast-vis{
-  height:60px;margin-top:1.2rem;position:relative;overflow:hidden;
+.svc-stat{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:0.78rem;
+  color:var(--moss);background:rgba(45,92,51,0.1);border:1px solid rgba(45,92,51,0.15);
+  padding:0.28rem 0.65rem;border-radius:100px;
 }
-.forecast-vis svg{width:100%;height:100%;}
+.svc-name{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.5rem;
+}
+.svc-title{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:1.1rem;line-height:1.25;letter-spacing:-0.025em;
+  color:var(--ink);margin-bottom:0.7rem;
+}
+.svc-desc{font-size:0.84rem;color:var(--muted);line-height:1.65;flex:1;}
+.svc-divider{height:1px;background:rgba(10,15,10,0.08);margin:1.2rem 0;}
+.svc-bullets{display:flex;flex-direction:column;gap:0.4rem;}
+.svc-bullet{display:flex;align-items:center;gap:0.5rem;font-size:0.77rem;color:rgba(10,15,10,0.55);}
+.svc-bullet::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--moss);flex-shrink:0;}
+.svc-card.featured{background:var(--leaf);}
+.svc-card.featured:hover{background:#1f4424;}
+.svc-card.featured .svc-name{color:rgba(255,255,255,0.38);}
+.svc-card.featured .svc-title{color:var(--white);}
+.svc-card.featured .svc-desc{color:rgba(255,255,255,0.48);}
+.svc-card.featured .svc-divider{background:rgba(255,255,255,0.08);}
+.svc-card.featured .svc-bullet{color:rgba(255,255,255,0.48);}
+.svc-card.featured .svc-bullet::before{background:var(--lime);}
+.svc-card.featured .svc-stat{background:rgba(74,222,128,0.15);border-color:rgba(74,222,128,0.25);color:var(--lime);}
+.svc-card.featured .svc-icon{background:rgba(255,255,255,0.08);}
 
 /* ── PRICING SECTION ── */
 .pricing{
@@ -322,7 +327,6 @@ nav.scrolled{background:rgba(10,15,10,0.9);backdrop-filter:blur(24px);border-bot
   border:none;cursor:pointer;
 }
 .cta-full:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,0.2);}
-/* addons stack */
 .addons-stack{display:flex;flex-direction:column;gap:1rem;}
 .addon{
   background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
@@ -361,7 +365,6 @@ nav.scrolled{background:rgba(10,15,10,0.9);backdrop-filter:blur(24px);border-bot
 .why-body h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;margin-bottom:0.5rem;}
 .why-body p{font-size:0.875rem;color:var(--muted);line-height:1.6;}
 
-/* Steps */
 .steps{margin-top:5rem;}
 .steps-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:2rem;color:var(--ink);}
 .steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid rgba(10,15,10,0.1);border-radius:20px;overflow:hidden;}
@@ -423,7 +426,6 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
 .fade-in-d3{transition-delay:0.3s;}
 .fade-in-d4{transition-delay:0.4s;}
 
-/* hero entrance */
 .hero-left .hero-pill{animation:heroIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.1s both;}
 .hero-left .hero-h1{animation:heroIn 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s both;}
 .hero-left .hero-sub{animation:heroIn 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
@@ -432,35 +434,161 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
 .hero-right{animation:heroIn 1s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
 @keyframes heroIn{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 
+/* ── HAMBURGER MENU ── */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:36px;height:36px;cursor:pointer;background:none;border:none;padding:2px;
+}
+.hamburger span{
+  display:block;height:2px;background:var(--white);border-radius:2px;
+  transition:transform 0.3s,opacity 0.3s;transform-origin:center;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:800;
+  background:rgba(8,10,8,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+  opacity:0;pointer-events:none;transition:opacity 0.3s;
+}
+.mobile-nav.open{opacity:1;pointer-events:all;}
+.mobile-nav a{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+  font-size:2rem;color:rgba(255,255,255,0.5);text-decoration:none;
+  transition:color 0.2s;letter-spacing:-0.03em;
+}
+.mobile-nav a:hover{color:var(--white);}
+.mobile-nav .mobile-cta{
+  background:var(--lime);color:var(--ink);
+  font-size:1rem;padding:0.9rem 2.5rem;border-radius:100px;
+  margin-top:0.5rem;
+}
+
+/* Pointer behavior */
 @media (hover:hover) and (pointer:fine){
   body{cursor:none;}
-  .cta-full{cursor:none;}
+  .cta-full,.hamburger{cursor:none;}
 }
-
 @media (hover:none),(pointer:coarse){
   .cursor,.cursor-ring{display:none;}
-  body{cursor:auto;}
-  .cta-full{cursor:pointer;}
 }
 
-/* Responsive */
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+}
+
+/* ── iPad Pro / large tablet (1024px) ── */
+@media(max-width:1024px){
+  nav{padding:1rem 2rem;}
+  .hero{padding:8rem 2rem 5rem;}
+  .hero-h1{font-size:clamp(2.6rem,5vw,5rem);}
+  .features,.pricing,.why,.cta-final{padding:5.5rem 2rem;}
+  .logos-strip{padding:1.8rem 2rem;}
+  footer{padding:2rem 2rem;}
+}
+
+/* ── iPad / standard tablet (900px) ── */
 @media(max-width:900px){
-  nav{padding:1rem 1.5rem;}
+  .hero{padding:7.5rem 2rem 4rem;}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .hero-right{height:280px;}
+  .dash-main{width:220px;top:0;right:10px;}
+  .roi-float{width:160px;right:auto;left:0;top:auto;bottom:0;transform:none;animation:float2 4.5s ease-in-out infinite;}
+  .wa-float{width:200px;bottom:auto;left:auto;right:0;top:50%;transform:translateY(-50%);}
+
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .features-header{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem;}
+
+  .pricing-grid{grid-template-columns:1.1fr 0.9fr;}
+
+  .why-header{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2.5rem;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+
+  .steps-row{grid-template-columns:repeat(3,1fr);}
+
+  footer{flex-direction:row;}
+}
+
+/* ── Mobile (768px) ── */
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem;}
   .nav-links{display:none;}
-  .hero{padding:8rem 1.5rem 4rem;grid-template-columns:1fr;}
-  .hero-inner{grid-template-columns:1fr;gap:3rem;}
-  .hero-right{height:260px;}
-  .bento{grid-template-columns:1fr;}
-  .bento-card.tall,.bento-card.wide{grid-column:auto;grid-row:auto;}
-  .features,.pricing,.why,.cta-final{padding:5rem 1.5rem;}
+  .hamburger{display:flex;}
+  .mobile-nav{display:flex;}
+  .nav-cta{display:none;}
+
+  .hero{padding:6rem 1.25rem 3.5rem;place-items:start;}
+  .hero-inner{grid-template-columns:1fr;gap:0;}
+  .hero-right{display:none;}
+  .hero-h1{font-size:clamp(2.2rem,9vw,3.2rem);line-height:1.0;}
+  .hero-sub{font-size:0.95rem;max-width:100%;}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.6rem;}
+  .btn-lg,.btn-ghost{width:100%;text-align:center;display:block;}
+  .hero-pill{font-size:0.75rem;}
+  .svc-tag{font-size:0.72rem;}
+
+  .logos-strip{padding:1.5rem 1.25rem;}
+
+  .features{padding:3.5rem 1.25rem;}
+  .features-header h2{font-size:clamp(1.8rem,6.5vw,2.4rem);}
+  .features-header-right p{font-size:0.88rem;}
+  .svc-grid{grid-template-columns:1fr;}
+  .svc-card{padding:1.5rem 1.2rem;}
+
+  .pricing{padding:3.5rem 1.25rem;}
+  .pricing-inner h2{font-size:clamp(1.8rem,6.5vw,2.4rem);}
   .pricing-grid{grid-template-columns:1fr;}
-  .why-header,.features-header{grid-template-columns:1fr;}
-  .why-grid{grid-template-columns:1fr;}
-  .steps-row{grid-template-columns:1fr;}
-  .step{border-right:none;border-bottom:1.5px solid rgba(10,15,10,0.1);}
+  .price-main{border-radius:18px;}
+  .price-body{padding:1.8rem 1.5rem;}
+  .price-amount{font-size:2.6rem;}
+  .addons-stack{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+  .addon{padding:1rem 1rem;}
+  .addon-name{font-size:0.85rem;}
+  .addon-desc{font-size:0.75rem;}
+  .addon-price{font-size:0.85rem;}
+
+  .why{padding:3.5rem 1.25rem;}
+  .why-header h2{font-size:clamp(1.8rem,6.5vw,2.4rem);}
+  .why-grid{grid-template-columns:1fr;gap:0.75rem;}
+  .why-card{padding:1.4rem;gap:1rem;}
+  .why-num{font-size:1.8rem;width:40px;}
+
+  .steps{margin-top:3rem;}
+  .steps-title{font-size:1.3rem;}
+  .steps-row{grid-template-columns:1fr;border-radius:14px;}
+  .step{border-right:none;border-bottom:1.5px solid rgba(10,15,10,0.1);padding:1.4rem;}
   .step:last-child{border-bottom:none;}
   .step-arrow{display:none;}
-  footer{flex-direction:column;text-align:center;}
+  .step-num-big{font-size:2.8rem;}
+
+  .cta-final{padding:3.5rem 1.25rem;}
+  .cta-final h2{font-size:clamp(1.9rem,7vw,2.8rem);}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:0.6rem;}
+  .cta-actions .btn-lg,.cta-actions .btn-ghost{width:100%;text-align:center;display:block;}
+  .contact-row{flex-direction:column;gap:0.6rem;align-items:center;}
+
+  footer{padding:1.5rem 1.25rem;flex-direction:column;text-align:center;gap:0.5rem;}
+  footer p{font-size:0.75rem;}
+}
+
+/* ── Small phone (430px) ── */
+@media(max-width:430px){
+  .hero-h1{font-size:clamp(2rem,8.5vw,2.8rem);}
+  .features-header h2,.pricing-inner h2,.why-header h2,.cta-final h2{font-size:1.7rem;}
+  .price-amount{font-size:2.2rem;}
+  .addons-stack{grid-template-columns:1fr;}
+  .svc-card{padding:1.3rem 1rem;}
+  .svc-icon-row{margin-bottom:1rem;}
+}
+
+/* ── Very small (360px) ── */
+@media(max-width:360px){
+  .hero-h1{font-size:1.85rem;}
+  .features-header h2,.pricing-inner h2,.why-header h2,.cta-final h2{font-size:1.55rem;}
 }
 </style>
 </head>
@@ -479,7 +607,19 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
     <li><a href="#cta">Contact</a></li>
   </ul>
   <a href="#cta" class="nav-cta">Book Free Call →</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="#features" onclick="closeMobileNav()">Services</a>
+  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#why" onclick="closeMobileNav()">Why Us</a>
+  <a href="#cta" onclick="closeMobileNav()">Contact</a>
+  <a href="#cta" class="mobile-cta" onclick="closeMobileNav()">Book Free Call →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -494,7 +634,7 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
         <span class="pill-text">5k+ leads delivered for Indian businesses</span>
       </div>
       <h1 class="hero-h1">Find Leads.<br><em>Like We<br>Found You.</em></h1>
-      <p class="hero-sub">We run Google, Meta & Amazon Ads — so your pipeline never runs dry. You focus on closing deals. We fill the pipeline.</p>
+      <p class="hero-sub">We run Google, Meta &amp; Amazon Ads — so your pipeline never runs dry. You focus on closing deals. We fill the pipeline.</p>
       <div class="hero-actions">
         <a href="#cta" class="btn-lg">Book Free Strategy Call</a>
         <a href="#features" class="btn-ghost">See how it works</a>
@@ -503,12 +643,12 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
         <span class="svc-tag">Google Ads</span>
         <span class="svc-tag">Meta Ads</span>
         <span class="svc-tag">Amazon PPC</span>
+        <span class="svc-tag">Lead Qualification</span>
+        <span class="svc-tag">High-Converting Websites</span>
         <span class="svc-tag">Sales Outsourcing</span>
-        <span class="svc-tag">WhatsApp Automation</span>
       </div>
     </div>
     <div class="hero-right">
-      <!-- Main dashboard card -->
       <div class="dash-card dash-main">
         <div class="dash-main-header">
           <h4>This Month · Campaigns</h4>
@@ -535,7 +675,6 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
           </div>
         </div>
       </div>
-      <!-- WA notification -->
       <div class="dash-card wa-float">
         <div class="wa-notif">
           <div class="wa-notif-header">
@@ -546,7 +685,6 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
           <div class="wa-notif-body">+91 98xxx xxxxx — New Lead</div>
         </div>
       </div>
-      <!-- ROI card -->
       <div class="dash-card roi-float">
         <div class="roi-inner">
           <div class="roi-label">Customer Acquisition · Live</div>
@@ -579,80 +717,119 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
   </div>
 </div>
 
-<!-- FEATURES BENTO -->
+<!-- SERVICES GRID -->
 <section class="features" id="features">
   <div class="features-header fade-in">
-    <h2>Your Marketing<br>Department <em>Just<br>Got Smarter.</em></h2>
+    <h2>Everything You Need<br>to <em>Win More Clients.</em></h2>
     <div class="features-header-right">
-      <p>5 performance services. One growth partner. Zero fluff. We handle ads, content, and sales — so you can focus on your product.</p>
+      <p>6 performance services. One team. No juggling agencies. We handle ads, leads, websites, and sales — so you close more, stress less.</p>
       <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
         <a href="#cta" class="btn-dark">Get Started →</a>
         <a href="#pricing" class="btn-light">See pricing</a>
       </div>
     </div>
   </div>
-  <div class="bento">
-    <!-- Card 1: Analytics -->
-    <div class="bento-card dark fade-in">
-      <div class="bento-tag">Google &amp; PPC</div>
-      <div class="bento-title">Show up when people search for exactly what you sell.</div>
-      <div class="bento-desc">High-intent traffic from Google Search, Display, and YouTube. Campaigns built and managed by specialists.</div>
-      <div class="mini-chart">
-        <div class="mini-bar" style="height:40%"></div>
-        <div class="mini-bar" style="height:55%"></div>
-        <div class="mini-bar hi" style="height:65%"></div>
-        <div class="mini-bar" style="height:50%"></div>
-        <div class="mini-bar hi" style="height:80%"></div>
-        <div class="mini-bar hi" style="height:90%"></div>
-        <div class="mini-bar hi" style="height:100%"></div>
+  <div class="svc-grid">
+    <div class="svc-card fade-in">
+      <div class="svc-icon-row">
+        <div class="svc-icon">🔍</div>
+        <span class="svc-stat">Avg. 3.2× ROAS</span>
       </div>
-      <div class="bento-accuracy" style="margin-top:0.8rem;">📈 Avg. 3.2x ROAS</div>
-    </div>
-    <!-- Card 2: Integrations (tall) -->
-    <div class="bento-card tall fade-in fade-in-d1">
-      <div class="bento-tag">Seamless Channels</div>
-      <div class="bento-title">Every platform your customers use — covered.</div>
-      <div class="bento-desc">Meta, Google, Amazon, TikTok, Email, WhatsApp. One team. Full coverage.</div>
-      <div class="platform-row" style="margin-top:1.5rem;">
-        <span class="platform-pill">🅖 Google</span>
-        <span class="platform-pill">📘 Meta</span>
-        <span class="platform-pill">🛒 Amazon</span>
-        <span class="platform-pill">📲 WhatsApp</span>
-        <span class="platform-pill">📧 Email</span>
-        <span class="platform-pill">📹 Reels</span>
+      <div class="svc-name">Google Ads &amp; PPC</div>
+      <div class="svc-title">Be the first result when your customer is ready to buy.</div>
+      <div class="svc-desc">We build and manage Google Search, Shopping, and Display campaigns — capturing high-intent traffic the moment someone searches for what you sell.</div>
+      <div class="svc-divider"></div>
+      <div class="svc-bullets">
+        <span class="svc-bullet">Google Search &amp; Shopping campaigns</span>
+        <span class="svc-bullet">Keyword research &amp; negative lists</span>
+        <span class="svc-bullet">Weekly bid optimisation</span>
       </div>
     </div>
-    <!-- Card 3: Forecast -->
-    <div class="bento-card fade-in fade-in-d2">
-      <div class="bento-tag">Lead Generation</div>
-      <div class="bento-title">Hot leads, delivered to your phone daily.</div>
-      <div class="bento-desc">We capture, qualify, and send leads directly to you. No time wasted on cold contacts.</div>
-      <div class="forecast-vis">
-        <svg viewBox="0 0 200 60" preserveAspectRatio="none">
-          <polyline points="0,50 30,40 60,35 90,25 120,20 160,10 200,5" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="200" cy="5" r="5" fill="#4ade80"/>
-        </svg>
+
+    <div class="svc-card fade-in fade-in-d1">
+      <div class="svc-icon-row">
+        <div class="svc-icon">📲</div>
+        <span class="svc-stat">2.8× avg. CTR lift</span>
+      </div>
+      <div class="svc-name">Meta Ads</div>
+      <div class="svc-title">Find your exact customer on Facebook &amp; Instagram before they look elsewhere.</div>
+      <div class="svc-desc">Interest, behaviour, and lookalike targeting — paired with scroll-stopping creatives built by our team. Full-funnel from awareness to conversion.</div>
+      <div class="svc-divider"></div>
+      <div class="svc-bullets">
+        <span class="svc-bullet">Audience research &amp; targeting</span>
+        <span class="svc-bullet">Ad creative strategy &amp; copy</span>
+        <span class="svc-bullet">Retargeting &amp; lookalike campaigns</span>
       </div>
     </div>
-    <!-- Card 4: Meta Ads (wide) -->
-    <div class="bento-card green-bg wide fade-in fade-in-d1">
-      <div class="bento-tag">Meta Ads</div>
-      <div class="bento-title">Reach your exact customer on Facebook &amp; Instagram — before they go looking elsewhere.</div>
-      <div class="bento-desc">Precision targeting by interest, behaviour, location, and lookalike audiences. Creative strategy included.</div>
+
+    <div class="svc-card featured fade-in fade-in-d2">
+      <div class="svc-icon-row">
+        <div class="svc-icon">🎯</div>
+        <span class="svc-stat">Only hot leads</span>
+      </div>
+      <div class="svc-name">Lead Qualification Pipeline</div>
+      <div class="svc-title">We build your full pipeline — so only ready-to-buy leads reach you.</div>
+      <div class="svc-desc">We design and operate your full lead qualification system. Every lead is scored, filtered, and verified before it reaches you — so you only talk to people who are ready to buy.</div>
+      <div class="svc-divider"></div>
+      <div class="svc-bullets">
+        <span class="svc-bullet">Auto-scoring &amp; filtering on capture</span>
+        <span class="svc-bullet">Verification via call / WhatsApp</span>
+        <span class="svc-bullet">Only hot leads handed off to you</span>
+      </div>
+      <div style="margin-top:1.2rem;display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.18);border-radius:10px;">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem;color:var(--lime);letter-spacing:-0.03em;">4–6×</span>
+        <span style="font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.4;">higher close rate vs unqualified leads</span>
+      </div>
     </div>
-    <!-- Card 5: Sales -->
-    <div class="bento-card fade-in fade-in-d2">
-      <div class="bento-tag">Sales Outsourcing</div>
-      <div class="bento-title">We call and close leads — so you don't have to.</div>
-      <div class="bento-desc">Dedicated trained agents, daily call reports, and full CRM tracking.</div>
+
+    <div class="svc-card fade-in fade-in-d1">
+      <div class="svc-icon-row">
+        <div class="svc-icon">🛒</div>
+        <span class="svc-stat">4.1× sales lift</span>
+      </div>
+      <div class="svc-name">Amazon Ads</div>
+      <div class="svc-title">Sponsored listings that rank, convert, and scale your store.</div>
+      <div class="svc-desc">Sponsored Products, Brands, and Display — managed with keyword research, bid optimisation, and A/B testing built for Indian sellers.</div>
+      <div class="svc-divider"></div>
+      <div class="svc-bullets">
+        <span class="svc-bullet">Sponsored Products &amp; Brands</span>
+        <span class="svc-bullet">ACOS optimisation</span>
+        <span class="svc-bullet">Competitor keyword targeting</span>
+      </div>
     </div>
-    <!-- Card 6: Amazon -->
-    <div class="bento-card dark fade-in fade-in-d3">
-      <div class="bento-tag">Amazon Ads</div>
-      <div class="bento-title">Sponsored products that actually rank and convert.</div>
-      <div class="bento-desc">Keyword research, bid optimisation, and A/B testing — built for Indian sellers.</div>
-      <div class="bento-accuracy" style="background:rgba(74,222,128,0.2);color:var(--lime);margin-top:1rem;">🛒 4.1x Sales Lift avg.</div>
+
+    <div class="svc-card fade-in fade-in-d2">
+      <div class="svc-icon-row">
+        <div class="svc-icon">🖥️</div>
+        <span class="svc-stat">Built to convert</span>
+      </div>
+      <div class="svc-name">High-Converting Websites</div>
+      <div class="svc-title">A website designed to turn visitors into paying customers — not just look good.</div>
+      <div class="svc-desc">Landing pages and full websites built with conversion architecture: clear CTA hierarchy, fast load times, mobile-first, and integrated with your ads and CRM.</div>
+      <div class="svc-divider"></div>
+      <div class="svc-bullets">
+        <span class="svc-bullet">Landing pages &amp; full-site builds</span>
+        <span class="svc-bullet">CRO — A/B tested layouts</span>
+        <span class="svc-bullet">Ad-to-page message match</span>
+      </div>
     </div>
+
+    <div class="svc-card fade-in fade-in-d3">
+      <div class="svc-icon-row">
+        <div class="svc-icon">📞</div>
+        <span class="svc-stat">Done for you</span>
+      </div>
+      <div class="svc-name">Sales Outsourcing</div>
+      <div class="svc-title">We call, follow up, and close your leads — so you don't have to.</div>
+      <div class="svc-desc">Dedicated trained sales agents handle outbound calls, WhatsApp follow-ups, and CRM updates. Full daily reports. You just show up to the hot ones.</div>
+      <div class="svc-divider"></div>
+      <div class="svc-bullets">
+        <span class="svc-bullet">Trained calling agents</span>
+        <span class="svc-bullet">CRM &amp; daily call reports</span>
+        <span class="svc-bullet">WhatsApp follow-up sequences</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -663,7 +840,6 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
     <h2 class="fade-in">Transparent. Flat.<br>No surprises.</h2>
     <p class="fade-in">One package. Every channel. Zero upsell ambush.</p>
     <div class="pricing-grid">
-      <!-- Main Package -->
       <div class="price-main fade-in">
         <div class="price-main-header">
           <span>The Growth Package</span>
@@ -676,15 +852,14 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
           <div class="inc-list">
             <div class="inc-row">Meta Ads — Facebook + Instagram</div>
             <div class="inc-row">Google Ads + PPC Management</div>
-            <div class="inc-row">SEO — On-page + Off-page</div>
-            <div class="inc-row">Social Media Management (SMM)</div>
-            <div class="inc-row">Email Marketing Campaigns</div>
-            <div class="inc-row">Graphic Design — Creatives &amp; Banners</div>
+            <div class="inc-row">Lead Qualification Pipeline Setup</div>
+            <div class="inc-row">High-Converting Website / Landing Page</div>
+            <div class="inc-row">SEO + Social Media Management</div>
+            <div class="inc-row">Email Marketing + Graphic Design</div>
           </div>
           <a href="#cta" class="cta-full">Get Started Today →</a>
         </div>
       </div>
-      <!-- Add-ons -->
       <div class="addons-stack fade-in fade-in-d1">
         <p style="font-size:0.8rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:0.25rem;">Add-on Services</p>
         <div class="addon">
@@ -798,7 +973,7 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
     <p>Book a free 30-minute strategy call. We'll map out exactly how many leads your business should be getting — and show you what's standing in the way.</p>
     <div class="cta-actions">
       <a href="mailto:hello@spotogrowth.in" class="btn-lg" style="font-size:1rem;padding:1rem 2.5rem;">Book Free Strategy Call →</a>
-      <a href="https://wa.me/91XXXXXXXXXX" class="btn-ghost" target="_blank">WhatsApp us</a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn-ghost" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
     </div>
     <div class="contact-row">
       <span class="contact-item">📧 hello@spotogrowth.in</span>
@@ -816,10 +991,36 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.2);}
 </footer>
 
 <script>
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Mobile nav
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+function setMobileNav(open){
+  hamburger.classList.toggle('open',open);
+  mobileNav.classList.toggle('open',open);
+  hamburger.setAttribute('aria-expanded',String(open));
+  mobileNav.setAttribute('aria-hidden',String(!open));
+  document.body.style.overflow=open?'hidden':'';
+  if(open){
+    const firstLink=mobileNav.querySelector('a');
+    if(firstLink)firstLink.focus();
+  }
+}
+function closeMobileNav(){setMobileNav(false);}
+hamburger.addEventListener('click',()=>{
+  const willOpen=!mobileNav.classList.contains('open');
+  setMobileNav(willOpen);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&mobileNav.classList.contains('open'))setMobileNav(false);
+});
+
 // Cursor
-const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursorRing');
 const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-if(finePointer&&cursor&&ring){
+if(finePointer&&!reduceMotion&&cursor&&ring){
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
   (function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
@@ -834,17 +1035,24 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);});
 
 // Scroll reveal
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const fadeEls=document.querySelectorAll('.fade-in');
+if(!reduceMotion&&'IntersectionObserver' in window){
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:0.1});
+  fadeEls.forEach(el=>obs.observe(el));
+}else{
+  fadeEls.forEach(el=>el.classList.add('show'));
+}
 
 // Bar animation in hero
-let idx=0;
 const bars=document.querySelectorAll('.dash-main .bar');
-setInterval(()=>{
-  bars.forEach(b=>b.classList.remove('active'));
-  bars[idx].classList.add('active');
-  idx=(idx+1)%bars.length;
-},600);
+if(!reduceMotion&&bars.length){
+  let idx=0;
+  setInterval(()=>{
+    bars.forEach(b=>b.classList.remove('active'));
+    bars[idx].classList.add('active');
+    idx=(idx+1)%bars.length;
+  },600);
+}
 
 const yearEl=document.getElementById('year');
 if(yearEl)yearEl.textContent=String(new Date().getFullYear());
